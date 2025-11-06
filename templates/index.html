@@ -1,46 +1,84 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Phishing Dashboard</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phishing Detection Dashboard</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             max-width: 800px;
             margin: 50px auto;
             padding: 20px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background-color: #f5f5f5;
         }
         .container {
-            background: white;
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
         h1 {
-            color: #667eea;
+            color: #333;
             text-align: center;
-            margin-bottom: 30px;
         }
-        .success {
-            color: green;
-            text-align: center;
-            font-size: 18px;
-            padding: 20px;
-            background: #d4edda;
+        textarea {
+            width: 100%;
+            height: 200px;
+            padding: 10px;
+            margin: 20px 0;
+            border: 1px solid #ddd;
             border-radius: 5px;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #e7f3ff;
+            border-radius: 5px;
+            display: none;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>🛡️ Phishing Detection Dashboard</h1>
-        <div class="success">
-            ✅ Congratulations! Your project is running successfully!
-        </div>
-        <p style="text-align: center; margin-top: 20px;">
-            This is your phishing detection dashboard.<br>
-            You've completed the first setup phase!
-        </p>
+        <h1>Phishing Detection Dashboard</h1>
+        <p>Paste suspicious email content below for analysis:</p>
+        <form id="analyzeForm">
+            <textarea id="emailContent" placeholder="Paste email headers or content here..."></textarea>
+            <button type="submit">Analyze Email</button>
+        </form>
+        <div id="result" class="result"></div>
     </div>
+    <script>
+        document.getElementById('analyzeForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const content = document.getElementById('emailContent').value;
+            fetch('/analyze', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: 'email_content=' + encodeURIComponent(content)
+            })
+            .then(response => response.json())
+            .then(data => {
+                const resultDiv = document.getElementById('result');
+                resultDiv.style.display = 'block';
+                resultDiv.innerHTML = '<strong>Status:</strong> ' + data.message;
+            });
+        });
+    </script>
 </body>
 </html>
