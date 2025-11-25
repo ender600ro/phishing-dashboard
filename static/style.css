@@ -1,0 +1,113 @@
+/* Basic page layout */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+    background-color: #ffcccc;
+    margin: 0;
+    padding: 30px 10px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    padding: 30px 40px 40px;
+}
+
+/* Headings */
+h1 {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 26px;
+}
+
+p.subtitle {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 25px;
+    color: #555;
+}
+
+/* Textarea */
+textarea {
+    width: 100%;
+    min-height: 220px;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+    font-size: 13px;
+    box-sizing: border-box;
+    resize: vertical;
+}
+
+/* Buttons */
+.button-row {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin: 20px 0 10px;
+}
+
+button,
+.btn {
+    background-color: #1976d2;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 22px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+button:hover,
+.btn:hover {
+    background-color: #1258a5;
+}
+
+/* Result panel */
+.result {
+    margin-top: 20px;
+    padding: 25px;
+    border-radius: 10px;
+    background-color: #e7f3ff;
+    border: 1px solid #c8daf7;
+    font-size: 14px;
+}
+
+/* Threat heading */
+.result h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+/* Metadata (From / Subject / URLs) */
+.meta {
+    margin-bottom: 15px;
+}
+
+.meta p {
+    margin: 3px 0;
+}
+
+.meta strong {
+    font-weight: 600;
+}
+
+/* List of reasons / indicators */
+.result ul {
+    margin-top: 5px;
+    padding-left: 20px;
+}
+
+/* JSON block */
+.result pre {
+    margin-top: 15px;
+    background-color: #f9fbff;
+    border-radius: 6px;
+    padding: 10px;
+    overflow-x: auto;
+    font-size: 12px;
+}

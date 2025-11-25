@@ -1,0 +1,25 @@
+{
+  "accuracy": 0.978,
+  "precision_phishing": 0.963,
+  "recall_phishing": 0.98,
+  "f1_phishing": 0.971,
+  "classes": [
+    "legit",
+    "phishing"
+  ],
+  "confusion_matrix_rows": [
+    "legit",
+    "phishing"
+  ],
+  "confusion_matrix": [
+    [
+      2715,
+      66
+    ],
+    [
+      35,
+      1708
+    ]
+  ],
+  "test_size": 4524
+}
