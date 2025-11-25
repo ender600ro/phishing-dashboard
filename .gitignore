@@ -1,15 +1,17 @@
-# Python virtual environment
+# virtual environments
 venv/
+venv311/
 
-# Compiled Python files
+# python cache
 __pycache__/
 *.pyc
 
-# macOS system files
+# macOS crap
 .DS_Store
 
-# Logs
-*.log
-
-# Environment variables / secrets
+# local configs
 .env
+
+# installers
+*.pkg
+
