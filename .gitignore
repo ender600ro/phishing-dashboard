@@ -1,17 +1,16 @@
-# virtual environments
+# Ignore virtual environments
 venv/
 venv311/
 
-# python cache
+# Ignore Python cache
 __pycache__/
-*.pyc
+.pytest_cache/
 
-# macOS crap
+# Ignore OS-generated files
 .DS_Store
 
-# local configs
+# Ignore environment variables
 .env
 
-# installers
-*.pkg
+
 
